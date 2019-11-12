@@ -6,14 +6,17 @@ const port = 3000;
 const {
     USUARIOS_API_URL,
     PRODUTOS_API_URL,
+    PAGAMENTOS_API_URL,
 } = require('./URLs');
 
 const usuarioServiceProxy = httpProxy(USUARIOS_API_URL);
 const produtosServiceProxy = httpProxy(PRODUTOS_API_URL);
+const pagamentosServiceProxy = httpProxy(PAGAMENTOS_API_URL);
 
 app.get('/', (req, res) => res.send('Oi Gateway API'));
 
 app.get('/usuarios', (req, res, next) => usuarioServiceProxy(req, res, next));
 app.get('/produtos', (req, res, next) => produtosServiceProxy(req, res, next));
+app.get('/pagamentos', (req, res, next) => pagamentosServiceProxy(req, res, next))
 
 app.listen(port, () => console.log(`Exemplo gateway api listening on port ${port}!`));
