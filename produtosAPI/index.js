@@ -1,5 +1,5 @@
 const app = require('express')();
 
-app.get('/products', (req, res) => res.send('Hello Products API'));
+app.get('/produtos', (req, res) => res.send('Oi produtos API'));
 
-app.listen(3002, () => console.log(`Products API listening on port 3002!`));
+app.listen(3002, () => console.log(`Produtos API listening on port 3002!`));
