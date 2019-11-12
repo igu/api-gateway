@@ -1,6 +1,6 @@
 
 const app = require('express')();
 
-app.get('/users', (req, res) => res.send('Hello Users API'));
+app.get('/usuarios', (req, res) => res.send('Oi usuarios API'));
 
-app.listen(3001, () => console.log(`Users API listening on port 3001!`));
+app.listen(3001, () => console.log(`Usuarios API listening on port 3001!`));
